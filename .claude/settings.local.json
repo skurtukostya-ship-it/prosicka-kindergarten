@@ -49,7 +49,21 @@
       "Bash(npx --no-install vercel --version)",
       "Bash(vercel whoami *)",
       "Bash(vercel project *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(vercel git *)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel inspect *)",
+      "Bash(vercel ls *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://luxury-studio-if70nj770-skurtukostya-3727s-projects.vercel.app)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://luxury-studio-skurtukostya-3727s-projects.vercel.app)",
+      "Bash(curl -s https://luxury-studio-skurtukostya-3727s-projects.vercel.app)",
+      "Bash(curl -sI https://luxury-studio-if70nj770-skurtukostya-3727s-projects.vercel.app)",
+      "Bash(ls -la \"/Users/kostyaskurtu/Library/Application Support/com.vercel.cli/\" 2>&1)",
+      "Read(//Users/kostyaskurtu/Library/Application Support/com.vercel.cli/**)",
+      "Bash(curl -s https://api.vercel.com/v9/projects/luxury-studio?teamId=team_97yJwbt5RDisT8aOUSn9j2AS -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s https://api.vercel.com/v13/deployments/dpl_BL5oFWVBXtWMxLoJGaaNJCShybWr?teamId=team_97yJwbt5RDisT8aOUSn9j2AS -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s https://api.vercel.com/v2/teams/team_97yJwbt5RDisT8aOUSn9j2AS -H 'Authorization: Bearer __CMDSUB_OUTPUT__')",
+      "Bash(curl -s 'https://api.vercel.com/v3/deployments/dpl_BL5oFWVBXtWMxLoJGaaNJCShybWr/events?teamId=team_97yJwbt5RDisT8aOUSn9j2AS&builds=1' -H 'Authorization: Bearer __CMDSUB_OUTPUT__')"
     ]
   }
 }
