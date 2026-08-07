@@ -1,11 +1,17 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/sections/hero";
-import { LogoCloud } from "@/components/sections/logo-cloud";
-import { Features } from "@/components/sections/features";
-import { ProductShowcase } from "@/components/sections/product-showcase";
-import { Stats } from "@/components/sections/stats";
-import { Testimonial } from "@/components/sections/testimonial";
-import { Pricing } from "@/components/sections/pricing";
+import { About } from "@/components/sections/about";
+import { Advantages } from "@/components/sections/advantages";
+import { Programs } from "@/components/sections/programs";
+import { Schedule } from "@/components/sections/schedule";
+import { Nutrition } from "@/components/sections/nutrition";
+import { Gallery } from "@/components/sections/gallery";
+import { VideoSection } from "@/components/sections/video";
+import { Testimonials } from "@/components/sections/testimonials";
+import { Teachers } from "@/components/sections/teachers";
+import { Faq } from "@/components/sections/faq";
+import { Transparency } from "@/components/sections/transparency";
+import { Contact } from "@/components/sections/contact";
 import { Cta } from "@/components/sections/cta";
 import { Footer } from "@/components/footer";
 
@@ -13,14 +19,20 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main id="main" className="flex-1">
         <Hero />
-        <LogoCloud />
-        <Features />
-        <ProductShowcase />
-        <Stats />
-        <Testimonial />
-        <Pricing />
+        <About />
+        <Advantages />
+        <Programs />
+        <Schedule />
+        <Nutrition />
+        <Gallery />
+        <VideoSection />
+        <Teachers />
+        <Testimonials />
+        <Faq />
+        <Transparency />
+        <Contact />
         <Cta />
       </main>
       <Footer />

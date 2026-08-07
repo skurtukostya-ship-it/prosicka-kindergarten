@@ -1,94 +1,89 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { Logo } from "@/components/ui/logo";
+import { SunMedallion } from "@/components/ui/illustrations";
+import { footer, site } from "@/lib/content";
 
-function XIcon(props: React.SVGProps<SVGSVGElement>) {
+function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M18.9 2.6h3.3l-7.2 8.2 8.5 11.2h-6.6l-5.2-6.8-5.9 6.8H2.4l7.7-8.8L1.9 2.6h6.8l4.7 6.2 5.5-6.2Zm-1.2 17.4h1.8L7.4 4.5H5.5l12.2 15.5Z" />
+      <path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.34C16.3 4.24 15.4 4.15 14.35 4.15c-2.2 0-3.7 1.34-3.7 3.8v2.55H8.15v3h2.5V21h2.85Z" />
     </svg>
   );
 }
 
-function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
+function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 1.5c-5.8 0-10.5 4.7-10.5 10.5 0 4.64 3.01 8.58 7.19 9.97.53.1.72-.23.72-.5 0-.25-.01-1.08-.01-1.96-2.64.57-3.2-1.13-3.2-1.13-.43-1.1-1.06-1.39-1.06-1.39-.87-.59.07-.58.07-.58.96.07 1.47.99 1.47.99.85 1.46 2.24 1.04 2.79.79.09-.62.34-1.04.61-1.28-2.11-.24-4.33-1.05-4.33-4.69 0-1.04.37-1.88 0.98-2.55-.1-.24-.42-1.22.09-2.54 0 0 .8-.26 2.63.97a9.06 9.06 0 0 1 4.79 0c1.83-1.23 2.63-.97 2.63-.97.52 1.32.19 2.3.1 2.54.61.67.98 1.51.98 2.55 0 3.65-2.23 4.45-4.35 4.68.35.3.65.88.65 1.78 0 1.29-.01 2.32-.01 2.64 0 .27.18.6.72.5 4.17-1.4 7.18-5.33 7.18-9.97C22.5 6.2 17.8 1.5 12 1.5Z"
-      />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }
 
-function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+function TelegramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.5 9.5h5v11h-5v-11Zm7.5 0h4.8v1.5h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.16 6 7.28v6.19h-5v-5.49c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.4-2.11 2.9v5.58h-5v-11Z" />
+      <path d="M21.4 3.4 2.9 10.7c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.9.9.9.4 0 .6-.2.9-.5l2.1-2 4.4 3.2c.8.5 1.4.2 1.6-.7l3-14.2c.3-1.2-.4-1.7-1.2-1.6ZM8.2 13.4l9-5.6c.4-.3.8 0 .5.3l-7.4 6.7-.3 3.2-1.2-3.4Z" />
     </svg>
   );
 }
 
-const COLUMNS = [
-  {
-    title: "Product",
-    links: ["Platform", "Pricing", "Changelog", "Docs"],
-  },
-  {
-    title: "Company",
-    links: ["About", "Blog", "Careers", "Contact"],
-  },
-  {
-    title: "Resources",
-    links: ["Documentation", "API reference", "Status", "Security"],
-  },
-  {
-    title: "Legal",
-    links: ["Privacy", "Terms", "DPA"],
-  },
-];
+const SOCIALS = [FacebookIcon, InstagramIcon, TelegramIcon];
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-16">
+    <footer className="relative border-t border-border bg-background-soft py-16 sm:py-20">
       <Container>
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
-          <div className="col-span-2 flex flex-col gap-4 sm:col-span-3 lg:col-span-2">
-            <Link href="#top" className="flex items-center gap-2.5 font-medium tracking-tight">
-              <Logo />
-              <span className="text-[15px]">Continuum</span>
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="flex flex-col gap-4 sm:col-span-2 lg:col-span-2">
+            <Link
+              href="#top"
+              className="flex items-center gap-2.5 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral-deep/40 focus-visible:ring-offset-2"
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sun text-white">
+                <SunMedallion className="h-5 w-5" />
+              </span>
+              <span className="font-heading text-[16px] font-extrabold leading-none text-foreground">
+                {site.name}
+              </span>
             </Link>
-            <p className="max-w-[26ch] text-[13.5px] leading-relaxed text-muted">
-              The infrastructure for autonomous intelligence.
+            <p className="max-w-[32ch] text-[14px] leading-relaxed text-muted-foreground">
+              {footer.tagline}
             </p>
             <div className="mt-2 flex items-center gap-3">
-              {[XIcon, GithubIcon, LinkedinIcon].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:text-foreground"
-                >
-                  <Icon width={14} height={14} />
-                </Link>
+              {SOCIALS.map((Icon, i) => (
+                <motion.div key={i} whileHover={{ y: -3, scale: 1.08 }} whileTap={{ scale: 0.92 }}>
+                  <Link
+                    href="#"
+                    aria-label="Соціальна мережа"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-background-elevated text-muted-foreground ring-1 ring-border transition-colors hover:text-coral-deep hover:ring-coral-deep/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral-deep/40"
+                  >
+                    <Icon width={15} height={15} />
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
 
-          {COLUMNS.map((col) => (
+          {footer.columns.map((col) => (
             <div key={col.title}>
-              <h4 className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-dim">
+              <h3 className="font-heading text-[13px] font-bold uppercase tracking-[0.06em] text-foreground/65">
                 {col.title}
-              </h4>
+              </h3>
               <ul className="mt-4 flex flex-col gap-3">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <Link
-                      href="#"
-                      className="text-[13.5px] text-muted transition-colors hover:text-foreground"
+                      href={link.href}
+                      className="group inline-flex items-center text-[14px] text-muted-foreground transition-colors hover:text-coral-deep focus-visible:outline-none focus-visible:text-coral-deep"
                     >
-                      {link}
+                      <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                        {link.label}
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -98,12 +93,10 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-[12.5px] text-muted-dim">
-            © {new Date().getFullYear()} Continuum Labs, Inc. All rights reserved.
+          <p className="text-[12px] text-muted-foreground">
+            © {new Date().getFullYear()} {site.name}. Усі права захищено.
           </p>
-          <p className="font-mono text-[11px] text-muted-dim">
-            Built for teams shipping AI in production.
-          </p>
+          <p className="text-[12px] text-muted-foreground">{site.address}</p>
         </div>
       </Container>
     </footer>
